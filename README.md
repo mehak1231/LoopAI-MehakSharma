@@ -28,10 +28,11 @@ It processes IDs in batches asynchronously, respects rate limits, and prioritize
 2. Install dependencies:
     ```bash
     npm install
+    npm i express uuid
     ```
 3. Start the server:
     ```bash
-    npm start
+    node index.js
     ```
     The server will run on [http://localhost:5001](http://localhost:5001) by default.
 
@@ -41,7 +42,7 @@ It processes IDs in batches asynchronously, respects rate limits, and prioritize
 
 ### 1. Ingestion API
 
-- **POST `/ingest`**
+- **POST `http://localhost:5001/ingest`**
 - **Body Example:**
     ```json
     {
@@ -58,7 +59,7 @@ It processes IDs in batches asynchronously, respects rate limits, and prioritize
 
 ### 2. Status API
 
-- **GET `/status/:ingestion_id`**
+- **GET `http://localhost:5001/status/<ingestion_id>`**
 - **Response Example:**
     ```json
     {
